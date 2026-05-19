@@ -1,85 +1,46 @@
 <script setup>
 import { RouterLink, RouterView } from 'vue-router'
-import HelloWorld from './components/HelloWorld.vue'
 </script>
 
 <template>
-  <header>
-    <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125" />
-
-    <div class="wrapper">
-      <HelloWorld msg="You did it!" />
-
+  <header class="bg-dark py-3 shadow-sm mb-4 sticky-top" style="z-index: 1050">
+    <div class="container d-flex justify-content-between align-items-center">
+      <RouterLink to="/" class="text-decoration-none">
+        <h1 class="h4 text-white m-0 d-flex align-items-center">
+          <i class="fa-solid fa-cloud-sun text-warning me-2 fs-3"></i>
+          Clima<span class="text-primary">CL</span>
+        </h1>
+      </RouterLink>
       <nav>
-        <RouterLink to="/">Home</RouterLink>
-        <RouterLink to="/about">About</RouterLink>
+        <RouterLink to="/" class="btn btn-outline-light btn-sm">Inicio</RouterLink>
       </nav>
     </div>
   </header>
 
-  <RouterView />
+  <main class="container mb-5">
+    <RouterView />
+  </main>
+
+  <footer class="bg-dark text-white text-center py-4 mt-auto">
+    <div class="container">
+      <p class="mb-0">© 2026 ClimaCL - Desarrollado por Raúl Leiva Lobos</p>
+    </div>
+  </footer>
 </template>
 
-<style scoped>
-header {
-  line-height: 1.5;
-  max-height: 100vh;
+<style>
+/* CSS Global */
+body {
+  background-color: #0f172a; /* Azul nocturno profundo de tu diseño */
+  color: #f8f9fa;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
-.logo {
-  display: block;
-  margin: 0 auto 2rem;
-}
-
-nav {
-  width: 100%;
-  font-size: 12px;
-  text-align: center;
-  margin-top: 2rem;
-}
-
-nav a.router-link-exact-active {
-  color: var(--color-text);
-}
-
-nav a.router-link-exact-active:hover {
-  background-color: transparent;
-}
-
-nav a {
-  display: inline-block;
-  padding: 0 1rem;
-  border-left: 1px solid var(--color-border);
-}
-
-nav a:first-of-type {
-  border: 0;
-}
-
-@media (min-width: 1024px) {
-  header {
-    display: flex;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
-  }
-
-  .logo {
-    margin: 0 2rem 0 0;
-  }
-
-  header .wrapper {
-    display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
-  }
-
-  nav {
-    text-align: left;
-    margin-left: -1rem;
-    font-size: 1rem;
-
-    padding: 1rem 0;
-    margin-top: 1rem;
-  }
+#app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 </style>
